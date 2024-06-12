@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Form from './components/form/Form'
-import { register } from '../../../store/authSlice'
+import { register, setStatus } from '../../../store/authSlice'
 import { useDispatch,useSelector } from 'react-redux'
 import STATUSES from '../../globals/status/statuses'
 import { useNavigate } from 'react-router-dom'
@@ -11,15 +11,20 @@ const Register = () => {
   const dispatch =useDispatch()
  const handleRegister=(data)=>{
   dispatch(register(data))
-  //check the status value
+
+ }
+ useEffect(()=>{
+   //check the status value
   //status -->vlaue success-->navigate the to login page.
   if(status=== STATUSES.SUCCESS){
-    return navigate('/login')
+   
+    dispatch(setStatus(null))
+    navigate('/login')
   }
-  else{
-    return navigate('/register')
-  }
- }
+  // else{
+  //    navigate('/register')
+  // }
+ },[status])
   return (
     <Form type='Register'onSubmit={handleRegister}/>
   )
