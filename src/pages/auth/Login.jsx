@@ -6,7 +6,7 @@ import { login, setStatus } from '../../../store/authSlice'
 import STATUSES from '../../globals/status/statuses'
 
 const Login = () => {
-  const {user,status} = useSelector((state)=>state.auth)
+  const {user,status,token} = useSelector((state)=>state.auth)
   const navigate = useNavigate()
 
   const dispatch = useDispatch()
@@ -23,13 +23,10 @@ const Login = () => {
      navigate('/')
      dispatch(setStatus(null))
   }
-  // else{
-  //   navigate("/login")
-  // }
  },[status])
   return (
    
-  <Form type='Login' user={user ? user:""} onSubmit={handleLogin} />
+  <Form type='Login' user={user ? user: ""} onSubmit={handleLogin} />
   )
 }
 

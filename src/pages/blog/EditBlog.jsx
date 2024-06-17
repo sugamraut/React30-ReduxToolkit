@@ -6,14 +6,15 @@ import { editBlog, setEditStatus } from "../../../store/blogSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const EditBlog = () => {
+  const { editStatus, inputData } = useSelector((store) => store.blog);
   const [data, setData] = useState({
-    title: "",
-    subtitle: "",
-    category: "",
-    description: "",
-    image: "",
+    title: inputData.title,
+    subtitle: inputData.subtitle,
+    category: inputData.category,
+    description: inputData.description,
+    image: inputData.image,
   });
-  const { editStatus } = useSelector((store) => store.blog);
+
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();

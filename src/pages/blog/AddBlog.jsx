@@ -1,13 +1,10 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
-import Navbar from "../../components/navbar/Navbar";
+import React, { useEffect } from "react";
 import Layout from "../../components/layout/Layout";
 import Form from "./components/form/Form";
 import { createBlog } from "../../../store/blogSlice";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch ,useSelector} from "react-redux";
 import { useNavigate } from "react-router-dom";
 import STATUSES from "../../globals/status/statuses";
-
 const AddBlog = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

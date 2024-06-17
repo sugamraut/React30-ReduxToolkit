@@ -11,7 +11,7 @@ import Spinner from "./components/spinner/Spinner";
 
 const SingleBlog = () => {
   const { id } = useParams();
-  const { inputData, deleteStatus } = useSelector((store) => store.blog);
+  const { inputData, deleteStatus } = useSelector((state) => state.blog);
   const navigate = useNavigate();
 
   const dispatch = useDispatch();

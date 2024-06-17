@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
+import React  from "react";
+import { Link,useParams } from "react-router-dom";
 const Card = ({ data }) => {
   return (
     <Link to={`/blog/${data._id}`}>
