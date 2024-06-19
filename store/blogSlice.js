@@ -51,7 +51,7 @@ export const createBlog = (data) => {
   };
 };
 export function fetchBlog() {
-  return async function fetchBlogThunk(dispatch) {
+  return async function fetchBlog(dispatch) {
     dispatch(setStatus(STATUSES.LOADING));
     try {
       const response = await API.get("blog");
