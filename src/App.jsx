@@ -7,6 +7,7 @@ import Home from './pages/blog/Home'
 import AddBlog from './pages/blog/AddBlog'
 //import EditBlog from './pages/blog/EditBlog'
 //import SingleBlog from './pages/blog/SingleBlog'
+import Parent from "./pages/UseCallback/Parent";
 import {Provider} from 'react-redux'
 import store from '../store/store'
 import Protected from './Protected'
@@ -19,6 +20,7 @@ function App() {
   return (
     <Provider store={store}>
     <BrowserRouter>
+    
      <Suspense fallback={<Spinner/>}>
      <Routes>
       <Route path="/" element={<Home />} />
@@ -27,6 +29,7 @@ function App() {
       <Route path = '/blog/add' element={<Protected><AddBlog /></Protected>} />
       <Route path='/blog/edit/:id' element={<Protected><EditBlog /></Protected>} />
       <Route path='/blog/:id' element={<Protected><SingleBlog /></Protected>} />
+      <Route path="/usecallback" element={<Parent />} />
     </Routes>
      </Suspense>
   </BrowserRouter>

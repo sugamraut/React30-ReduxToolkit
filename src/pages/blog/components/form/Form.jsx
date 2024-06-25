@@ -49,7 +49,7 @@ const Form = ({ type, onSubmit }) => {
               />
               <input
                 class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="number"
+                type="text"
                 placeholder="Category*"
                 name="category"
                 onChange={handleChange}
